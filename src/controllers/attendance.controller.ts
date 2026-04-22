@@ -34,7 +34,7 @@ export class AttendanceController {
 
     @Get('GetAttendances')
     @HttpCode(HttpStatus.OK)
-    @ApiOperation({ summary: 'Get employee positions' })
+    @ApiOperation({ summary: 'Get all attendances' })
     @Roles('ADMIN')
     @UseGuards(RolesGuard)
     async getAttendances(@Query() query: PaginationRequestModel) {

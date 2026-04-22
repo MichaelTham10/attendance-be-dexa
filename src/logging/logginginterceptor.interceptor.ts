@@ -22,7 +22,7 @@ export class LoggingInterceptorInterceptor implements NestInterceptor {
     const req = http.getRequest();
     const res = http.getResponse();
 
-    const SERVICE_NAME = 'employee_service';
+    const SERVICE_NAME = 'attd_service';
     const start = Date.now();
 
     return next.handle().pipe(
