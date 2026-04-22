@@ -17,6 +17,9 @@ export class Attendance {
     @Column({ name: 'CHECK_OUT', type: 'timestamp', nullable: true })
     CheckOut: Date | null;
 
+    @Column({ name: 'STATUS', type: 'varchar', length: 50, nullable: true })
+    Status: string | null;
+
     @Column({ name: 'USR_CRT', type: 'varchar', length: 100, nullable: true })
     UsrCrt: string | null;
 

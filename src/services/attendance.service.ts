@@ -29,6 +29,7 @@ export class AttendanceService {
             AttendanceNo: `ATT-${Date.now()}-${empNo}`,
             CheckIn: new Date(),
             EmpNo: empNo,
+            Status : "MASUK",
             UsrCrt: userEmail,
             UsrUpd: userEmail,
         });
@@ -57,6 +58,7 @@ export class AttendanceService {
         }
         attendance.CheckOut = new Date();
         attendance.UsrUpd = userEmail;
+        attendance.Status = "PULANG";
 
         const queueData: UpdateEmpQueueModel = {
             empNo,
@@ -100,7 +102,7 @@ export class AttendanceService {
             skip,
             take: limit,
             order: {
-                DtmCrt: 'DESC',
+                CheckIn: 'ASC',
             },
         });
 
